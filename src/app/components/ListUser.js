@@ -1,6 +1,5 @@
-import { getUsers } from "@/app/functions/handlerAcessAPI";
 
-export default async function ListUser() {
+export default async function ListUsers() {
   await new Promise((resolve) => setTimeout(resolve,3000))
     return (
         <div>
