@@ -1,8 +1,7 @@
 import { getUsers } from "@/app/functions/handlerAcessAPI";
 
-export default async function Dashboard() {
-   const users = await getUsers();
-
+export default async function ListUser() {
+  await new Promise((resolve) => setTimeout(resolve,3000))
     return (
         <div>
     {users?.map((user, index) =>
