@@ -10,7 +10,6 @@ import './css/style.css'
 
 export default function Login() {
   const [user, setUser] = useState({
-    name: '',
     email: '',
     password: '',
   });
@@ -29,11 +28,7 @@ export default function Login() {
     <div className="container">
       <h1>Login</h1>
       <form onSubmit={handlerLogin}>
-      <input
-          placeholder='Nome'
-          type="name"
-          onChange={(e) => { setUser({ ...user, name: e.target.value }) }}>
-        </input>
+     
         <input
           placeholder='E-mail'
           type="email"
