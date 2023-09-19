@@ -7,7 +7,7 @@
 const getUserAuthenticated = (user) => {
 let userAuth= {};
 users.map((userList) => {
-   if(userList.name === user.name && userList.email === user.email && userList.password === user.password) {
+   if( userList.email === user.email && userList.password === user.password) {
    userAuth = userList;
    }
 })

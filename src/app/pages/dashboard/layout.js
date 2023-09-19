@@ -33,6 +33,14 @@ export const metadata = {
         </Link>
       </li>
       <li className="flex flex-row items-center">
+        <Link
+          href="/pages/dashboard/alter"
+          className="text-blue-500 hover:text-blue-700"
+        >
+          Alter
+        </Link>
+      </li>
+      <li className="flex flex-row items-center">
         <button onClick={logout} className="text-blue-500 hover:text-blue-700">
           Sair
         </button>

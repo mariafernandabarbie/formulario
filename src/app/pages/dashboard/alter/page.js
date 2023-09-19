@@ -12,7 +12,7 @@ export default function Register() {
     return (
         <div className='body'>
         <div className='container'>
-            <h1>Register</h1>
+            <h1>Alterar</h1>
             <form>
      
             <input
@@ -36,7 +36,7 @@ export default function Register() {
             
         </div>
         <ToastContainer
-position="bottom-left"
+position="bottom-right"
 autoClose={5000}
 hideProgressBar={false}
 newestOnTop={false}
