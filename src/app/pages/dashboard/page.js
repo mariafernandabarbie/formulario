@@ -1,4 +1,4 @@
-import ListUsers from "../components/ListUser";
+import ListUsers from "@/app/components/ListUser";
 import { getUsers } from "@/app/functions/handlerAcessAPI";
 import { Suspense } from "react";
 
