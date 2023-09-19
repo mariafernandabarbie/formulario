@@ -4,7 +4,7 @@ import handlerAcessUser from "./functions/handlerAcess"
 import { useRouter } from "next/navigation";
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
-import './css/style.css'
+import '@/app/pages/dashboard/css/style.css'
 
 
 
@@ -19,6 +19,7 @@ export default function Login() {
     e.preventDefault();
     try {
       await handlerAcessUser(user);
+
       push('/pages/dashboard');
     } catch {
       toast.error("Erro na aplicação");
@@ -47,6 +48,18 @@ export default function Login() {
         <button>Entrar</button>
       </form>
       <ToastContainer/>
+      <ToastContainer
+position="bottom-left"
+autoClose={5000}
+hideProgressBar={false}
+newestOnTop={false}
+closeOnClick
+rtl={false}
+pauseOnFocusLoss={false}
+draggable={false}
+pauseOnHover
+theme="colored"
+/>
     </div>
   )
 }

@@ -17,8 +17,7 @@ export const metadata = {
     }
     return(
 <div className="bg-pink-700 min-h-screen flex">
-  <div className="w bg-white p-6 rounded-lg shadow-md">
-    <h1 className="text-lg font-semibold mb-4">Dashboard</h1>
+  <div className="w-1/4 bg-white p-6 rounded-lg shadow-md">
     <ul className="flex flex-row space-x-4">
       <li className="flex flex-row items-center">
         <Link href="/" className="text-blue-500 hover:text-blue-700">
