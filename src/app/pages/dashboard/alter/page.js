@@ -6,7 +6,7 @@ import 'react-toastify/dist/ReactToastify.css';
 export default function Register() {
     const handler = async (e) => {
         e.preventDefault();
-        toast('Registrado com sucesso')
+        toast('Alterado com sucesso')
       }
     
     return (
