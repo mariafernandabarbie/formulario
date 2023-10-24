@@ -6,7 +6,7 @@ const handlerAcessUser = async (user) => {
 
     const userAuth = await getUserAuthenticated(user);
     
-    const isTokenValidate = validateToken(userAuth.token);
+    const isTokenValidate = await validateToken(userAuth.token);
 
     if (isTokenValidate) {
         localStorage.setItem('name', userAuth.name);

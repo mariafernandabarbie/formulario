@@ -11,6 +11,7 @@
   "dependencies": {
     "autoprefixer": "10.4.15",
     "dotenv-safe": "^8.2.0",
+    "jose": "^4.15.4",
     "js-cookie": "^3.0.5",
     "jsonwebtoken": "^9.0.2",
     "next": "13.4.19",
