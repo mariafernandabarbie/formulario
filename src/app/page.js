@@ -1,5 +1,6 @@
 'use client'
 import { useState } from "react";
+import {postUser} from 'next/navigation';
 import handlerAcessUser from "./functions/handlerAcess"
 import { useRouter } from "next/navigation";
 import { ToastContainer, toast } from "react-toastify";
@@ -10,21 +11,28 @@ import '@/app/pages/dashboard/css/style.css'
 
 export default function Login() {
   const [user, setUser] = useState({
+    name:'',
     email: '',
     password: '',
   });
   const { push } = useRouter();
 
-  const handlerLogin = async (e) => {
+
+  const handlerFormSubmit = async (e) => {
     e.preventDefault();
     try {
-      await handlerAcessUser(user);
-
+      await postUser(user);
+await new Promise((resolve) => {
+  toast.sucess("Usuário cadastrado com sucesso")
+  setTimeout(resolve, 5000)
+})
       push('/pages/dashboard');
+ 
     } catch {
       toast.error("Erro na aplicação");
     }
   }
+
 
   
   return (
@@ -33,7 +41,7 @@ export default function Login() {
     <div className="container">
       
       <h1>Login</h1>
-      <form onSubmit={handlerLogin}>
+      <form onSubmit={handlerFormSubmit}>
      
         <input
           placeholder='E-mail'
