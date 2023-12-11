@@ -5,33 +5,25 @@ import { validateToken } from "./app/functions/validateToken";
 export const middleware = async (request) => {
 
     const token = request.cookies.get('token')?.value;
-    const urlLogin = new URL('/pages/dashboard', request.url);
-    const urlRegister = new URL('/pages/dashboard/register', request.url);
-    const urlAlter = new URL('/pages/dashboard/alter', request.url);
-
+    const urlLogin = new URL('/', request.url);
+    const urlDashboard = new URL('/pages/dashboard', request.url);
     const isTokenValidated = await validateToken(token);
 
-    if (!isTokenValidated || !token) {
-        if (request.nextUrl.pathname === '/pages/dashboard') {
-            return NextResponse.redirect(urlLogin);
-        }
-    } 
-        if (!isTokenValidated || !token) {
-            if (request.nextUrl.pathname === '/pages/dashboard/register') {
-                return NextResponse.redirect(urlRegister);
-             
-            }
-    }
 
     if (!isTokenValidated || !token) {
-        if (request.nextUrl.pathname === '/pages/dashboard/alter') {
-            return NextResponse.redirect(urlAlter);
-         
+        if (request.nextUrl.pathname === '/pages/dashboard' 
+        || request.nextUrl.pathname ==='/pages/dashboard/register'
+        || request.nextUrl.pathname ==='/pages/dashboard/alter') {
+            return NextResponse.redirect(urlLogin);
         }
-}
+    }
+    if (isTokenValidated) {
+        if (request.nextUrl.pathname === '/') {
+            return NextResponse.redirect(urlDashboard);
+        }
+    }
     NextResponse.next();
 };
 export const config = {
-    matcher: ['/', '/pages/dashboard', '/pages/dashboard/register', '/pages/dashboard/alter']
+    matcher: ['/', '/pages/dashboard/:path*']
 };
-
