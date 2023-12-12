@@ -1,7 +1,7 @@
 'use server'
 
 
-const url="https://aula-17-10-lemon.vercel.app";
+const url="https://aula-17-10-mven.vercel.app/";
 
 const getUserAuthenticated = async (user) => {
   try {
